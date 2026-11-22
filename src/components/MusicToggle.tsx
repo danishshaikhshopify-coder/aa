@@ -21,7 +21,7 @@ export function MusicToggle() {
 
   return (
     <div className="music-toggle">
-      <audio ref={audioRef} src="/music.mp3" loop onError={() => setMissing(true)} />
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}music.mp3`} loop onError={() => setMissing(true)} />
       <button className="btn btn-ghost" onClick={toggle} aria-pressed={playing}>
         {playing ? "⏸ pause music" : "♪ play music"}
       </button>
