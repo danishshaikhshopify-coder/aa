@@ -1,4 +1,5 @@
 import { MotionConfig } from "framer-motion";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import { Portal } from "./sections/Portal";
 import { MagicalMap } from "./sections/MagicalMap";
 import { MemoryGalaxy } from "./sections/MemoryGalaxy";
@@ -14,20 +15,28 @@ function scrollToMap() {
   document.getElementById("map")?.scrollIntoView({ behavior: "smooth" });
 }
 
+const SECTIONS: Array<{ label: string; node: React.ReactNode }> = [
+  { label: "portal", node: <Portal onEnter={scrollToMap} /> },
+  { label: "map", node: <MagicalMap /> },
+  { label: "memory-galaxy", node: <MemoryGalaxy /> },
+  { label: "fashion-kingdom", node: <FashionKingdom /> },
+  { label: "mystery-mansion", node: <MysteryMansion /> },
+  { label: "moonlight-garden", node: <MoonlightGarden /> },
+  { label: "rice-disaster", node: <RiceDisaster /> },
+  { label: "quest-board", node: <QuestBoardSection /> },
+  { label: "future-constellation", node: <FutureConstellation /> },
+  { label: "secret-room", node: <SecretRoom /> },
+];
+
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className="app">
-        <Portal onEnter={scrollToMap} />
-        <MagicalMap />
-        <MemoryGalaxy />
-        <FashionKingdom />
-        <MysteryMansion />
-        <MoonlightGarden />
-        <RiceDisaster />
-        <QuestBoardSection />
-        <FutureConstellation />
-        <SecretRoom />
+        {SECTIONS.map(({ label, node }) => (
+          <ErrorBoundary key={label} label={label}>
+            {node}
+          </ErrorBoundary>
+        ))}
       </div>
     </MotionConfig>
   );
