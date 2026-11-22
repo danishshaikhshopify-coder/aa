@@ -1,0 +1,100 @@
+:root {
+  /* dark galaxy backgrounds */
+  --midnight: #0c0a1e;
+  --deep-plum: #170f2e;
+  --violet-deep: #241546;
+  --plum: #341c54;
+  --indigo-glow: #3d2266;
+
+  /* neon / accent (also used as illustration fill colors) */
+  --pink-deep: #ff5fa8;
+  --neon-pink: #ff3fa0;
+  --lavender: #c9a8ff;
+  --lavender-deep: #9d6bff;
+  --rose-gold: #eab08a;
+  --gold: #f0c87e;
+
+  /* light "glass card" surface + its own text colors */
+  --white-soft: #fff9f3;
+  --cream: #fdf3ea;
+  --cream-deep: #f2e0d0;
+  --blush: #f6d9e4;
+  --peach: #f3b98a;
+  --pink: #f3b8c7;
+  --mauve: #a876c0;
+  --mauve-deep: #5a2f78;
+  --ink: #3b2252;
+  --ink-soft: #7a6090;
+
+  /* text sitting directly on the dark cosmic background */
+  --star-white: #f6f1ff;
+  --text-on-dark: #e7dcf7;
+  --text-on-dark-soft: #b6a3d9;
+
+  --font-script: "Dancing Script", cursive;
+  --font-hand: "Caveat", cursive;
+  --font-body: "Quicksand", sans-serif;
+  --font-bubble: "Fredoka", sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+
+  --shadow-soft: 0 20px 50px -15px rgba(5, 2, 20, 0.65);
+  --shadow-paper: 0 8px 24px rgba(10, 5, 25, 0.35), 0 2px 6px rgba(10, 5, 25, 0.25);
+  --glow-pink: 0 0 26px rgba(255, 95, 168, 0.55);
+  --glow-lavender: 0 0 26px rgba(157, 107, 255, 0.5);
+  --glow-gold: 0 0 20px rgba(240, 200, 126, 0.5);
+
+  --ease-dream: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--midnight);
+  color: var(--text-on-dark);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
